@@ -1,4 +1,4 @@
-Madrasa Master Backend - Complete Package
+madrasa-aid Backend - Complete Package
 
 Quick start (local):
 1. npm install
