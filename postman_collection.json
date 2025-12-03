@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "Madrasa API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone\":\"999\",\"password\":\"123\"}"
+        },
+        "url": {
+          "raw": "{{base}}/api/auth/login",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Donation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\":100,\"madrasaId\":\"MAD\",\"donorName\":\"A\",\"donorPhone\":\"900\",\"type\":\"online\"}"
+        },
+        "url": {
+          "raw": "{{base}}/api/donation/create",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "api",
+            "donation",
+            "create"
+          ]
+        }
+      }
+    }
+  ]
+}

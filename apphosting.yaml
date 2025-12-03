@@ -1,0 +1,8 @@
+runtime: nodejs20
+cloud_run:
+  region: us-east4
+  cpu: 1
+  memory: 512Mi
+  concurrency: 80
+  min_instances: 0
+  max_instances: 3

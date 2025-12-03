@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.token.isAdmin == true;
+    }
+    match /agents/{agentId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth.token.isAdmin == true;
+      match /commissions/{cid} {
+        allow read: if request.auth != null;
+        allow write: if request.auth.token.isAdmin == true;
+      }
+    }
+    match /madrasas/{mid} {
+      allow read: if true;
+      allow write: if request.auth.token.isAdmin == true;
+    }
+    match /donations/{did} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+  }
+}
